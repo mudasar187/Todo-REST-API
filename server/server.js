@@ -14,16 +14,16 @@ app.use(bodyParser.json());
 
 // Post route
 app.post('/todos', (req, res) => {
-    let todo = new Todo({
-        text: req.body.text
+    var todo = new Todo({
+      text: req.body.text
     });
-
-    todo.save().then(() => {
-        res.send(doc);
+  
+    todo.save().then((doc) => {
+      res.send(doc);
     }, (e) => {
-        res.status(400).send(e);
+      res.status(400).send(e);
     });
-});
+  });
 
 
 
@@ -31,3 +31,9 @@ app.post('/todos', (req, res) => {
 app.listen(3000, () => {
     console.log('Started on port 3000');
 });
+
+
+// Export the app
+module.exports = {
+    app
+};
