@@ -51,3 +51,40 @@ GET /todos/:id
 To get a todo by ID, enter this url -> [localhost:3000/todos/yourTodoId](localhost:3000/todos/yourTodoId)
 
 Make a GET request for all todos, grab one of the todo's ID and insert it in the end of the url and see the output
+
+
+
+## Deloy to Heroku
+
+You'll need:
+
+- [Heroku](https://www.heroku.com/) (Create a account, its free)
+
+When you want to deploy your production app to Heroku you need to to some following things:
+
+- Go to the main *.js file, where the server runs. In this app i have my main *.js file named 'server.js'
+
+- Add a new line with this -> let port = process.env.PORT || 3000;
+- Add these lines in bottom of the file ->  app.listen(port, () => {
+    console.log(`Started up at port ${port}`);
+});
+- Add this lines to 'package.json' file -> "scripts": {
+"start": "node server/server.js",
+}
+
+- Add this line right above "author" -> "engines": {
+    "node": "8.10.0"
+  },
+
+- Go to the file where the connection for mongodb is, in my project i have it in 'mongoose.js' file, add this line -> mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/TodoApp');
+
+- Now to to [Heroku](https://www.heroku.com/), look at the right a box named 'New', click there and choose a name for your app and specify the location you live.
+
+- When done, go to your terminal where project is located and type followings
+
+- heroku create
+- heroku addons:create mongolab:sandbox
+- heroku config (If you see the text 'Started up on port (some number)' then you are good to go)
+- git push heroku push master
+- heroku logs (To check the logs on your server, if any error, you will se it there)
+- heroku open (open the url where the production app lives, remember to run this command inside the project folder)
