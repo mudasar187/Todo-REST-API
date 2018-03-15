@@ -1,6 +1,8 @@
 # Todo-REST-API
 
-## Node.js Project
+A Todo-REST-API using MongoDB locally
+## Run
 
-- MongoDB
+You'll need:
+
 - 
