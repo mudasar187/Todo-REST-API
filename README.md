@@ -78,8 +78,6 @@ When you want to deploy your production app to Heroku you need to to some follow
 
 - Go to the file where the connection for mongodb is, in my project i have it in 'mongoose.js' file, add this line -> mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/TodoApp');
 
-- Now to to [Heroku](https://www.heroku.com/), look at the right a box named 'New', click there and choose a name for your app and specify the location you live.
-
 - When done, go to your terminal where project is located and type followings
 
 - heroku create
