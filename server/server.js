@@ -11,6 +11,11 @@ let {ObjectID} = require('mongodb');
 // Creating an express app
 let app = express();
 
+/* 
+Since im going to depoly to Heroku, im going to set the environment port variable that Heroku is going to set
+*/
+let port = process.env.PORT || 3000;
+
 // Configure the middelware
 app.use(bodyParser.json());
 
@@ -55,8 +60,8 @@ app.get('/todos/:id', (req,res) => {
 });
 
 // Create the port this server is listen to
-app.listen(3000, () => {
-    console.log('Started on port 3000');
+app.listen(port, () => {
+    console.log(`Started up at port ${port}`);
 });
 
 
