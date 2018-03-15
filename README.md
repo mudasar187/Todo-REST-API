@@ -83,6 +83,6 @@ When you want to deploy your production app to Heroku you need to to some follow
 - heroku create
 - heroku addons:create mongolab:sandbox
 - heroku config (If you see the text 'Started up on port (some number)' then you are good to go)
-- git push heroku push master
+- git push heroku master
 - heroku logs (To check the logs on your server, if any error, you will se it there)
 - heroku open (open the url where the production app lives, remember to run this command inside the project folder)
