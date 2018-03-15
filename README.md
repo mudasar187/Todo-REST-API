@@ -18,14 +18,19 @@ Do:
 
 ## Endpoints
 
-### See all todos
- Go to [http://localhost:3000/todos](http://localhost:3000/todos) in Chrome or enter the url in Postman or something similar
+### See all Todos
 
-### Add a todo
+GET /todos
 
-[Postman](https://www.getpostman.com/) or something similar to send a POST request to  [http://localhost:3000/todos](http://localhost:3000/todos)
+Enter this url -> [http://localhost:3000/todos](http://localhost:3000/todos) in Chrome or enter it in Postman or something similar
 
-You need the header 'Content-Type: application/json'
+### Add a Todo
+
+POST /todos
+
+To add a todo enter this url -> [http://localhost:3000/todos](http://localhost:3000/todos) in [Postman](https://www.getpostman.com/) or something similar
+
+Set the header 'Content-Type: application/json'
 
 The body MUST contain:
 - text (String)
@@ -38,4 +43,11 @@ Example:
 
 When you're done go to  [http://localhost:3000/todos](http://localhost:3000/todos) and see the todo you just added
 
- 
+
+### Find Todo by ID
+
+GET /todos/:id
+
+To get a todo by ID, enter this url -> [localhost:3000/todos/yourTodoId](localhost:3000/todos/yourTodoId)
+
+Make a GET request for all todos, grab one of the todo's ID and insert it in the end of the url and see the output

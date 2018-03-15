@@ -34,6 +34,7 @@ Todo.findById(id).then((todo) => {
 }).catch((e) => console.log(e));
 */
 
+/*
 User.findById('5aaaa6d902a0bb713619aee21').then((user) => {
     if(!user) {
         return console.log('Unable to find user');
@@ -41,4 +42,5 @@ User.findById('5aaaa6d902a0bb713619aee21').then((user) => {
     console.log(JSON.stringify(user, undefined, 2));
 }, (e) => {
     console.log(e);
-})
+});
+*/
