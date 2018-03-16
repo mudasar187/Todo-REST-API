@@ -1,3 +1,5 @@
+require('./config/config'); // Get the config file
+
 let bodyParser = require('body-parser');
 let express = require('express');
 let _ = require('lodash');

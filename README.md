@@ -69,8 +69,10 @@ When you want to deploy your production app to Heroku you need to to some follow
     console.log(`Started up at port ${port}`);
 });
 - Add this lines to 'package.json' file -> "scripts": {
-"start": "node server/server.js",
-}
+    "start": "node server/server.js",
+    "test": "mocha server/**/*.test.js",
+    "test-watch": "nodemon --exec 'npm test'"
+  },
 
 - Add this line right above "author" -> "engines": {
     "node": "8.10.0"
@@ -86,3 +88,4 @@ When you want to deploy your production app to Heroku you need to to some follow
 - git push heroku master
 - heroku logs (To check the logs on your server, if any error, you will se it there)
 - heroku open (open the url where the production app lives, remember to run this command inside the project folder)
+
