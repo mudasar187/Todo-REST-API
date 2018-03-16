@@ -1,6 +1,6 @@
 # Todo-REST-API
 
-A Todo-REST-API using MongoDB locally
+A Todo-REST-API using MongoDB locally and Heroku deployment
 ## Run
 
 You'll need:
