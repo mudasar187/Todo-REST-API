@@ -52,7 +52,18 @@ To get a todo by ID, enter this url -> [localhost:3000/todos/yourTodoId](localho
 
 Make a GET request for all todos, grab one of the todo's ID and insert it in the end of the url and see the output
 
+### Update a Todo by ID
 
+PATCH /todos/:id
+
+To update a todo by ID, enter this url -> [localhost:3000/todos/yourTodoId](localhost:3000/todos/yourTodoId)
+Make a GET request for all todos, grab one of the todo's ID and insert it in the end of the url and then make a PATCH request by enter an id and set example this -> 
+
+{
+    "text": "This is an updated text"
+}
+
+Now get ALL todos by making /GET request and see if there is an updated text
 
 ## Deloy to Heroku
 
@@ -64,21 +75,22 @@ When you want to deploy your production app to Heroku you need to to some follow
 
 - Go to the main *.js file, where the server runs. In this app i have my main *.js file named 'server.js'
 
-- Add a new line with this -> let port = process.env.PORT || 3000;
+- Add a new line with this -> let port = process.env.PORT;
 - Add these lines in bottom of the file ->  app.listen(port, () => {
     console.log(`Started up at port ${port}`);
 });
-- Add this lines to 'package.json' file -> "scripts": {
+- Add this lines to 'package.json' file, REMEMBER TO INCLUDE ALL THE TEXT ->
+
+  "scripts": {
     "start": "node server/server.js",
-    "test": "mocha server/**/*.test.js",
+    "test": "export NODE_ENV=test || SET \"NODE_ENV=test\" && mocha server/**/*.test.js",
     "test-watch": "nodemon --exec 'npm test'"
   },
-
-- Add this line right above "author" -> "engines": {
+  "engines": {
     "node": "8.10.0"
   },
 
-- Go to the file where the connection for mongodb is, in my project i have it in 'mongoose.js' file, add this line -> mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/TodoApp');
+- Go to the file where the connection for mongodb is, in my project i have it in 'mongoose.js' file, add this line -> mongoose.connect(process.env.MONGODB_URI);
 
 - When done, go to your terminal where project is located and type followings
 

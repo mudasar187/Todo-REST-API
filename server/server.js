@@ -17,7 +17,7 @@ let app = express();
 /* 
 Since im going to depoly to Heroku, im going to set the environment port variable that Heroku is going to set
 */
-let port = process.env.PORT || 3000;
+let port = process.env.PORT;
 
 // Configure the middelware
 app.use(bodyParser.json());
